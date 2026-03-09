@@ -1,7 +1,7 @@
 def login(username, password):
 
     # BUG: password can be None
-    if password == "":
+    if password is None or password == "":
         return "Password cannot be empty"
 
     if username == "admin" and password == "admin123":
