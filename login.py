@@ -22,6 +22,14 @@ The login function crashes when password is None.
 The code should check for None before validating credentials.
 
 Code:
+
+The following Python code has a bug.
+
+Issue:
+The login function crashes when password is None.
+The code should check for None before validating credentials.
+
+Code:
 def login(username, password):
 
     # BUG: password can be None
@@ -131,3 +139,46 @@ parse.ArgumentParser(description="parse KML into readable data")
     #print(return_data)
 
     return
+
+Return only the corrected code.
+list=True, return_dict = False, verbose=False):
+    """
+    Extract the kml from a given path
+    
+    Parameters
+    ----------
+    kml_path : str
+        Path to kml file; must include root element
+    
+    Returns
+    -------
+    outlist : list
+        All nodes and children element
+    
+    Returns
+    -------
+    outdict : dictionary
+        All nodes and children element
+    
+    Raises
+    -------
+    ParseError
+        If the file is malformed
+    KeyError
+        If there is a problem with the data
+        
+    """
+    
+    from_kml = parse.parse(f=kml_path)
+    
+    outlist = []
+    outdict = {}
+    
+    try:
+        # Get all data and get names for all children
+        for node in from_kml:
+        # Get list of all children of given element
+            children = node.getchildren()
+            for elem in children:
+                # If needed, get names for a child and append it to list
+                tmp_name = elem.get
